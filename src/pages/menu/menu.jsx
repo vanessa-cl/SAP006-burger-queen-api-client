@@ -18,31 +18,31 @@ const Menu = () => {
       const newArray = addItem;
       newArray[foundItem].qtd++;
       setAddItem([...newArray])
-     
+
     } else {
       setAddItem([...addItem, { id: elem.id, qtd: initialQtd, name: elem.name, price: elem.price, flavor: elem.flavor }])
-     
+
     }
-   
+
 
 
   }
 
   const deleteProducts = (elem) => {
     const foundItem = addItem.findIndex((item) => item.id === elem.id);
-     console.log(addItem[foundItem].qtd)
+    console.log(addItem[foundItem].qtd)
     if (foundItem !== -1) {
       const qtd = addItem[foundItem].qtd
-       if(qtd === 1) {
-         const removed = addItem
-         removed.splice(foundItem,1)
-         setAddItem([...removed])
-         
-       } else {
-         const newArray = addItem;
+      if (qtd === 1) {
+        const removed = addItem
+        removed.splice(foundItem, 1)
+        setAddItem([...removed])
+
+      } else {
+        const newArray = addItem;
         newArray[foundItem].qtd--;
         setAddItem([...newArray])
-       }
+      }
 
     } else {
 
@@ -62,17 +62,16 @@ const Menu = () => {
           <div className='menu-types'>
             <button className='menu-button' onClick={handleButtonTypeClick} value={'breakfast'}>Café da manhã</button>
             <button className='menu-button' onClick={handleButtonTypeClick} value={'hamburguer'}>Hambúrgueres</button>
-            <button className='menu-button' onClick={handleButtonTypeClick} value={'side'}>Side</button>
+            <button className='menu-button' onClick={handleButtonTypeClick} value={'side'}>Acompanhamentos</button>
             <button className='menu-button' onClick={handleButtonTypeClick} value={'drinks'}>Bebidas</button>
           </div>
+          <h1 className='menu-title'>Comanda</h1>
           <MenuHamburger />
         </nav>
         <main className='menu-container'>
           <section className='products-list'>
             <div className='list-labels'>
               <label className='list-label'>Produto</label>
-              <label className='list-label'>Sabor</label>
-              <label className='list-label'>Acréscimo</label>
               <label className='list-label'>Valor</label>
             </div>
             <section className='list-area' {...productsFiltered}>
@@ -82,8 +81,6 @@ const Menu = () => {
                     key={elem.id}
                     name={elem.name}
                     price={elem.price}
-                    flavor={elem.flavor}
-                    complement={elem.complement}
                     qtd={elem.qtd}
                     onClick={() => {
                       addProducts(elem);
@@ -116,7 +113,7 @@ const Menu = () => {
               <option value='10'>Mesa 10</option>
             </select>
             <div className='orders-area'>
-              <Cart data={addItem} onClick={addProducts} onClickDelete={deleteProducts}/>
+              <Cart data={addItem} onClick={addProducts} onClickDelete={deleteProducts} />
               <ResultPrice value={total} />
             </div>
             <button className='menu-button draw' onClick={sendToKitchen}>Finalizar pedido</button>
