@@ -6,54 +6,7 @@ import ResultPrice from "../../components/resultprice";
 import useProducts from "./useProducts";
 
 const Menu = () => {
-  const { handleButtonTypeClick, productsFiltered, setAddItem, addItem, total, sendToKitchen, handleOrderChange } = useProducts();
-  const initialQtd = 1;
-
-
-  const addProducts = (elem) => {
-
-    const foundItem = addItem.findIndex((item) => item.id === elem.id);
-
-    if (foundItem !== -1) {
-      const newArray = addItem;
-      newArray[foundItem].qtd++;
-      setAddItem([...newArray])
-
-    } else {
-      setAddItem([...addItem, { id: elem.id, qtd: initialQtd, name: elem.name, price: elem.price, flavor: elem.flavor }])
-
-    }
-
-
-
-  }
-
-  const deleteProducts = (elem) => {
-    const foundItem = addItem.findIndex((item) => item.id === elem.id);
-    console.log(addItem[foundItem].qtd)
-    if (foundItem !== -1) {
-      const qtd = addItem[foundItem].qtd
-      if (qtd === 1) {
-        const removed = addItem
-        removed.splice(foundItem, 1)
-        setAddItem([...removed])
-
-      } else {
-        const newArray = addItem;
-        newArray[foundItem].qtd--;
-        setAddItem([...newArray])
-      }
-
-    } else {
-
-      setAddItem([...addItem, { id: elem.id, qtd: initialQtd, name: elem.name, price: elem.price, flavor: elem.flavor }])
-
-    }
-
-
-
-  }
-
+  const { handleButtonTypeClick, productsFiltered, addItem, total, sendToKitchen, handleOrderChange, addProducts, deleteProducts, selectComplement, selectFlavor } = useProducts();
 
   return (
     <div className='main'>
@@ -93,6 +46,19 @@ const Menu = () => {
                   />
                 )
               })}
+            </section>
+            <section className='complement-area'>
+              <select autoComplete='off' className='select-options' onChange={selectComplement}>
+                <option value=''>Adicionar complemento</option>
+                <option value='queijo'>Queijo</option>
+                <option value='ovo'>Ovo</option>
+              </select>
+              <select autoComplete='off' className='select-options' onChange={selectFlavor}>
+                <option value=''>Selecionar sabor</option>
+                <option value='carne'>Carne</option>
+                <option value='frango'>Frango</option>
+                <option value='vegetariano'>Vegetariano</option>
+              </select>
             </section>
           </section>
           <section className='orders-card'>

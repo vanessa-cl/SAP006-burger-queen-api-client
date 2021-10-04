@@ -368,6 +368,21 @@ body {
   align-self: center;
 }
 
+.complement-area {
+  @include box-sizes(29em, 19em);
+  @include box-style();
+}
+
+.product-button {
+  @include box-sizes(1.8em, 1.8em);
+  border-radius: 50%;
+}
+
+.select-options {
+  @include box-sizes(15em, 2em);
+  font-size: 17px;
+}
+
 //menu-hamburguer
 
 .menu-nav {
@@ -432,6 +447,21 @@ body {
   &:hover {
     background-color: $light-pink;
   }
+}
+
+.complement-area {
+  @include box-sizes(29em, 19em);
+  @include box-style();
+}
+
+.product-button {
+  @include box-sizes(1.8em, 1.8em);
+  border-radius: 50%;
+}
+
+.select-options {
+  @include box-sizes(15em, 2em);
+  font-size: 17px;
 }
 
 @keyframes slide {

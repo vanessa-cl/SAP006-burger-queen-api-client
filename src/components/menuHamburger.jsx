@@ -27,7 +27,8 @@ const MenuHamburger = () => {
           onClick={() => {
             localStorage.removeItem('token');
             history.push('/');
-          }}>Logout
+          }}
+          >Logout
         </button>
       </div>
     </nav>

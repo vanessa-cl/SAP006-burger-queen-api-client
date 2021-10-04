@@ -18,23 +18,25 @@ const useForm = () => {
   }, [errors])
 
   const handleChange = (e) => {
-    const auxValues = { ...values };
-    auxValues[e.target.name] = e.target.value;
-    setValues(auxValues);
-    setErrors(() => validateForm(values).message);
+    return setValues(() => {
+      const auxValues = { ...values };
+      auxValues[e.target.name] = e.target.value;
+      setErrors(() => validateForm(auxValues).message);
+      return auxValues;
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(() => validateForm(values).message)
     if (validateForm(values).validationFulfilled === true) {
-      createUser(values)
+      createUser('/users', values)
         .then(res => res.json())
         .then(data => {
           if (data.code === 403) {
-            setErrors(data.message);
+            setErrors(() => data.message);
           } else {
-            setErrors('Email cadastrado com sucesso!')
+            setErrors(() => 'Email cadastrado com sucesso!')
           }
         })
         .catch(error => console.log(error))

@@ -1,5 +1,8 @@
-export const createUser = (values) => {
-  return fetch('https://lab-api-bq.herokuapp.com/users', {
+const BASE_URL = 'https://lab-api-bq.herokuapp.com';
+const TOKEN = localStorage.getItem('token');
+
+export const createUser = (endpoint, values) => {
+  return fetch(`${BASE_URL}${endpoint}` , {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -14,8 +17,8 @@ export const createUser = (values) => {
   });
 };
 
-export const loginUser = (values) => {
-  return fetch('https://lab-api-bq.herokuapp.com/auth', {
+export const loginUser = (endpoint, values) => {
+  return fetch(`${BASE_URL}${endpoint}` , {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -27,23 +30,23 @@ export const loginUser = (values) => {
   });
 };
 
-export const getProducts = () => {
-  return fetch('https://lab-api-bq.herokuapp.com/products', {
+export const getProducts = (endpoint) => {
+  return fetch(`${BASE_URL}${endpoint}` , {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': localStorage.getItem('token')
+      'Authorization': TOKEN
     },
   })
   .then(res => res.json())
 }
 
-export const sendOrder = (orderInfo, addItem) => {
-  return fetch('https://lab-api-bq.herokuapp.com/orders', {
+export const sendOrder = (endpoint, orderInfo, addItem) => {
+  return fetch(`${BASE_URL}${endpoint}` , {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': localStorage.getItem('token')
+      'Authorization': TOKEN
     },
     body: JSON.stringify({
       client: orderInfo.client,
@@ -51,4 +54,14 @@ export const sendOrder = (orderInfo, addItem) => {
       products: addItem,  
     })
   })
+}
+
+export const getOrders = (endpoint) => {
+  return fetch(`${BASE_URL}${endpoint}` , {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': TOKEN
+    },
+  }).then((res) => res.json())
 }

@@ -27,7 +27,7 @@ const useFormLogin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    loginUser(values)
+    loginUser('/auth', values)
       .then(res => res.json())
       .then((data) => {
         if (data.role === 'attendant') {
