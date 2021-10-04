@@ -65,3 +65,20 @@ export const getOrders = (endpoint) => {
     },
   }).then((res) => res.json())
 }
+
+export const updateOrderStatus = (endpoint, id, status) => {
+  id = id.toString();
+  return fetch(`${BASE_URL}${endpoint}${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': TOKEN,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true,
+      'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST', 
+    },
+    body: JSON.stringify({
+      status
+    })
+  }).then((res) => res.json())
+}
