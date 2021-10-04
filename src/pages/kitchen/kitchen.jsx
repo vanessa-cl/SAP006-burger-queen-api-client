@@ -11,6 +11,10 @@ const Kitchen = () => {
   }
 
   useEffect(() => {
+    return { orders }
+  }, [orders])
+
+  useEffect(() => {
   return getData();
   }, [])
 

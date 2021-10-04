@@ -100,11 +100,12 @@ const handleOrderChange = (e) => {
   return setOrderInfo(() => {
     const auxValues = { ...orderInfo };
     auxValues[e.target.name] = e.target.value;
+    return auxValues;
   });
 }
 
 const sendToKitchen = () => {
-  sendOrder(orderInfo, addItem)
+  sendOrder('/orders', orderInfo, addItem)
     .then((res => res.json()))
     .then((data) => console.log(data));
 }

@@ -79,7 +79,7 @@ const Menu = () => {
           </section>
           <section className='orders-card'>
             <label className='menu-labels'>Cliente</label>
-            <input className='menu-input' type='text' placeholder='Nome' name='name' autoComplete='off' onChange={handleOrderChange} />
+            <input className='menu-input' type='text' placeholder='Nome' name='client' autoComplete='off' onChange={handleOrderChange} />
             <label className='menu-labels'>Mesa</label>
             <select className='menu-select' autoComplete='off' name='table' onChange={handleOrderChange}>
               <option value=''>Selecione uma mesa</option>
