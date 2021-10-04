@@ -16,8 +16,10 @@ export default function Cart({ data, onClick, onClickDelete }) {
               onClickDelete={() => onClickDelete(elem)}
             />
             <p>{elem.qtd}</p>
+
           </div>)
       })}
     </article>
+
   )
 }

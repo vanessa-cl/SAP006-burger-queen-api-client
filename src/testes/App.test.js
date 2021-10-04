@@ -1,8 +1,8 @@
-import Login from './pages/login/login';
-import MenuHamburger from './components/menuHamburger';
-import ShowErrors from './components/errors';
-import ProductInfo from './components/productinfo';
-import Cart from './components/cart';
+import Login from '../pages/login/login';
+import MenuHamburger from '../components/menuHamburger';
+import ShowErrors from '../components/errors';
+import ProductInfo from '../components/productinfo';
+import Cart from '../components/cart';
 import { render, screen } from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 

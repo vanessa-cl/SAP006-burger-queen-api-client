@@ -12,7 +12,7 @@ const useProducts = () => {
   const initialQtd = 1;
 
   const getData = async () => {
-    const data = await getProducts().then(data => data)
+    const data = await getProducts('/products').then(data => data)
     setProducts(data)
   }
 

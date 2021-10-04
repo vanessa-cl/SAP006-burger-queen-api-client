@@ -10,7 +10,6 @@ const ProductInfo = ({ name, price, flavor, complement, onClick, onClickDelete }
       <p className='product-info'>R${price},00</p>
       <button className='product-button' onClick={onClick}>+</button>
       <button className='product-button' onClick={onClickDelete}>-</button>
-     
     </article>
   )
 }

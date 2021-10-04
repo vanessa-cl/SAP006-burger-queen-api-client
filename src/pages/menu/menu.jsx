@@ -37,8 +37,6 @@ const Menu = () => {
           <section className='products-list'>
             <div className='list-labels'>
               <label className='list-label'>Produto</label>
-              <label className='list-label'>Sabor</label>
-              <label className='list-label'>Acréscimo</label>
               <label className='list-label'>Valor</label>
             </div>
             <section className='list-area' {...productsFiltered}>

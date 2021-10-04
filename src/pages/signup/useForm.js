@@ -30,7 +30,7 @@ const useForm = () => {
     e.preventDefault();
     setErrors(() => validateForm(values).message)
     if (validateForm(values).validationFulfilled === true) {
-      createUser(values)
+      createUser('/users', values)
         .then(res => res.json())
         .then(data => {
           if (data.code === 403) {
