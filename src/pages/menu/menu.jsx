@@ -6,7 +6,20 @@ import ResultPrice from "../../components/resultprice";
 import useProducts from "./useProducts";
 
 const Menu = () => {
-  const { handleButtonTypeClick, productsFiltered, addItem, total, sendToKitchen, handleOrderChange, addProducts, deleteProducts, selectComplement, selectFlavor, flavor, complement, productsType } = useProducts();
+  const { 
+    handleButtonTypeClick, 
+    productsFiltered, 
+    addItem, 
+    total, 
+    sendToKitchen, 
+    handleOrderChange, 
+    addProducts, 
+    deleteProducts, 
+    selectComplement, 
+    selectFlavor, 
+    flavor, 
+    complement, 
+    productsType } = useProducts();
 
   return (
     <div className='main'>
