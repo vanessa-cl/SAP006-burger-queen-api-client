@@ -4,9 +4,25 @@ import ProductInfo from "../../components/productinfo";
 import Cart from "../../components/cart";
 import ResultPrice from "../../components/resultprice";
 import useProducts from "./useProducts";
+import ShowErrors from "../../components/errors";
 
 const Menu = () => {
-  const { handleButtonTypeClick, productsFiltered, addItem, total, sendToKitchen, handleOrderChange, addProducts, deleteProducts, selectComplement, selectFlavor } = useProducts();
+  const {
+    handleButtonTypeClick,
+    productsFiltered,
+    addItem,
+    total,
+    sendToKitchen,
+    handleOrderChange,
+    addProducts,
+    deleteProducts,
+    selectComplement,
+    selectFlavor,
+    flavor,
+    complement,
+    productsType,
+    message,
+  } = useProducts();
 
   return (
     <div className='main'>
@@ -42,28 +58,32 @@ const Menu = () => {
                     onClickDelete={() => {
                       deleteProducts(elem);
                     }}
-
                   />
                 )
               })}
             </section>
-            <section className='complement-area'>
-              <select autoComplete='off' className='select-options' onChange={selectComplement}>
-                <option value=''>Adicionar complemento</option>
-                <option value='queijo'>Queijo</option>
-                <option value='ovo'>Ovo</option>
-              </select>
-              <select autoComplete='off' className='select-options' onChange={selectFlavor}>
-                <option value=''>Selecionar sabor</option>
-                <option value='carne'>Carne</option>
-                <option value='frango'>Frango</option>
-                <option value='vegetariano'>Vegetariano</option>
-              </select>
-            </section>
+            <ShowErrors value={message} />
+            {productsType === 'hamburguer' ? (
+              <section className='complement-area'>
+                <select autoComplete='off' className='select-options' onChange={selectFlavor} value={flavor}>
+                  <option value=''>Selecionar sabor</option>
+                  <option value='carne'>Carne</option>
+                  <option value='frango'>Frango</option>
+                  <option value='vegetariano'>Vegetariano</option>
+                </select>
+                <select autoComplete='off' className='select-options' onChange={selectComplement} value={complement}>
+                  <option value=''>Adicionar complemento</option>
+                  <option value='queijo'>Queijo</option>
+                  <option value='ovo'>Ovo</option>
+                </select>
+              </section>
+            ) : null
+            }
+           
           </section>
           <section className='orders-card'>
             <label className='menu-labels'>Cliente</label>
-            <input className='menu-input' type='text' placeholder='Nome' name='name' autoComplete='off' onChange={handleOrderChange} />
+            <input className='menu-input' type='text' placeholder='Nome' name='client' autoComplete='off' onChange={handleOrderChange} />
             <label className='menu-labels'>Mesa</label>
             <select className='menu-select' autoComplete='off' name='table' onChange={handleOrderChange}>
               <option value=''>Selecione uma mesa</option>
