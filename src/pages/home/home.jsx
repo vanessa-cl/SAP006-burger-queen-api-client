@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import norton from '../../img/norton.png';
-import fightclub from '../../img/fightclub.png';
+import fcb from '../../img/fcb.png';
 import tyler from '../../img/tyler.png'
 import tyton from '../../img/tyton.png'
 
@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <main className='main'>
       <header className='logo-field'>
-        <img src={fightclub} className='logo' alt='fight-club' />
+        <img src={fcb} className='logo' alt='fight-club' />
       </header>
       <section className='card-container'>
         <button className='cards' onClick={() => { history.push('/login') }}>

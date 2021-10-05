@@ -5,7 +5,6 @@ import Cart from '../components/cart';
 import { render, screen } from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 
-
 describe('Menu Hamburger Component', () => {
   it('deve ter a classe nav-item inicialmente', async () => {
     render(<MenuHamburger />);
