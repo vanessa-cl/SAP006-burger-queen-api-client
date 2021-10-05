@@ -4,22 +4,25 @@ import ProductInfo from "../../components/productinfo";
 import Cart from "../../components/cart";
 import ResultPrice from "../../components/resultprice";
 import useProducts from "./useProducts";
+import ShowErrors from "../../components/errors";
 
 const Menu = () => {
-  const { 
-    handleButtonTypeClick, 
-    productsFiltered, 
-    addItem, 
-    total, 
-    sendToKitchen, 
-    handleOrderChange, 
-    addProducts, 
-    deleteProducts, 
-    selectComplement, 
-    selectFlavor, 
-    flavor, 
-    complement, 
-    productsType } = useProducts();
+  const {
+    handleButtonTypeClick,
+    productsFiltered,
+    addItem,
+    total,
+    sendToKitchen,
+    handleOrderChange,
+    addProducts,
+    deleteProducts,
+    selectComplement,
+    selectFlavor,
+    flavor,
+    complement,
+    productsType,
+    message,
+  } = useProducts();
 
   return (
     <div className='main'>
@@ -28,9 +31,10 @@ const Menu = () => {
           <div className='menu-types'>
             <button className='menu-button' onClick={handleButtonTypeClick} value={'breakfast'}>Café da manhã</button>
             <button className='menu-button' onClick={handleButtonTypeClick} value={'hamburguer'}>Hambúrgueres</button>
-            <button className='menu-button' onClick={handleButtonTypeClick} value={'side'}>Side</button>
+            <button className='menu-button' onClick={handleButtonTypeClick} value={'side'}>Acompanhamentos</button>
             <button className='menu-button' onClick={handleButtonTypeClick} value={'drinks'}>Bebidas</button>
           </div>
+          <h1 className='menu-title'>Comanda</h1>
           <MenuHamburger />
         </nav>
         <main className='menu-container'>
@@ -54,28 +58,28 @@ const Menu = () => {
                     onClickDelete={() => {
                       deleteProducts(elem);
                     }}
-
                   />
                 )
               })}
             </section>
-
+            <ShowErrors value={message} />
             {productsType === 'hamburguer' ? (
               <section className='complement-area'>
-                <select autoComplete='off' className='select-options' onChange={selectComplement} value={complement}>
-                  <option value=''>Adicionar complemento</option>
-                  <option value='queijo'>Queijo</option>
-                  <option value='ovo'>Ovo</option>
-                </select>
                 <select autoComplete='off' className='select-options' onChange={selectFlavor} value={flavor}>
                   <option value=''>Selecionar sabor</option>
                   <option value='carne'>Carne</option>
                   <option value='frango'>Frango</option>
                   <option value='vegetariano'>Vegetariano</option>
                 </select>
+                <select autoComplete='off' className='select-options' onChange={selectComplement} value={complement}>
+                  <option value=''>Adicionar complemento</option>
+                  <option value='queijo'>Queijo</option>
+                  <option value='ovo'>Ovo</option>
+                </select>
               </section>
             ) : null
             }
+           
           </section>
           <section className='orders-card'>
             <label className='menu-labels'>Cliente</label>

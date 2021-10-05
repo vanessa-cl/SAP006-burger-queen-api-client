@@ -5,17 +5,17 @@ const isAuthenticated = () => localStorage.getItem('token');
 
 const PrivateRouter = ({ component: Component, ...rest }) => {
   return (
-     <Route
+    <Route
       {...rest}
-        render={props =>
+      render={props =>
         isAuthenticated() ? (
-        <Component {...props} />
+          <Component {...props} />
         ) : (
-        <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+          <Redirect to={{ pathname: '/', state: { from: props.location } }} />
         )
-        }
-        />
-    )
+      }
+    />
+  )
 }
 
 export default PrivateRouter;
