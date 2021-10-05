@@ -1,4 +1,3 @@
-import Login from '../pages/login/login';
 import MenuHamburger from '../components/menuHamburger';
 import ShowErrors from '../components/errors';
 import ProductInfo from '../components/productinfo';
@@ -6,21 +5,6 @@ import Cart from '../components/cart';
 import { render, screen } from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 
-describe('testando classe', () => {
-  it('deve ter a classe loginTitle no título', () => {
-    render(<Login />);
-    const loginTitle = screen.getByText('Login');
-    expect(loginTitle).toHaveClass('login-title');
-  });
-})
-
-describe('Testando botão', () => {
-  it('deve ter um botão logar', () => {
-    render(<Login />);
-    const buttonLogin = screen.getByRole('button');
-    expect(buttonLogin).toBeInTheDocument();
-  });
-})
 
 describe('Menu Hamburger Component', () => {
   it('deve ter a classe nav-item inicialmente', async () => {
