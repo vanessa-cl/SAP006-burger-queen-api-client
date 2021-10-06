@@ -100,6 +100,7 @@ const useProducts = () => {
   }
 
   const handleOrderChange = (e) => {
+    setMessage('');
     return setOrderInfo(() => {
       const auxValues = { ...orderInfo };
       auxValues[e.target.name] = e.target.value;

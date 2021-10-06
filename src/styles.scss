@@ -67,6 +67,10 @@ body {
 .logo {
   width: 20em;
   margin: 1em;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 //home, login e signup
