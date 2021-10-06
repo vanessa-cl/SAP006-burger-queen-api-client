@@ -1,6 +1,6 @@
 import React from "react";
 
-const OrderCard = ({ name, table, status, createdAt, product }) => {
+const OrderCard = ({ name, table, status, createdAt, product, onClick }) => {
   return (
     <div>
       <p>{name}</p>
@@ -8,6 +8,7 @@ const OrderCard = ({ name, table, status, createdAt, product }) => {
       <p>{status}</p>
       <p>{createdAt}</p>
       <p>{product}</p>
+      <button onClick={onClick}>Finalizar pedido</button>
     </div>
   )
 }
