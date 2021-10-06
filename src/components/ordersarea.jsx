@@ -24,7 +24,7 @@ const OrdersArea = ({ value }) => {
               clientProducts.map((product) => {
                 console.log(product)
                 return (
-                  <OrderProducts
+                  <OrderProducts 
                     key={product.id}
                     name={product.name}
                     flavor={product.flavor}

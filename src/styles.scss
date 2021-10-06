@@ -483,10 +483,34 @@ body {
 }
 
 //kitchen
+.kitchen-labels {
+  color: $pink;
+  font-size: 3.5em;
+  font-weight: bolder;
+  font-family: 'Pixels';
+}
+
+.items-labels {
+  color: $light-pink;
+  margin-top: 15px;
+  font-size: 20px;
+}
 
 .order-card {
-  @include box-sizes(15em, 10em);
+  @include box-sizes(19em, 29em);
   @include box-style();
+  display: flex;
+  padding: 30px;
+  margin: 8px;
+
+}
+
+
+.cards-info {
+  margin: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+
 }
 
 .orders-page {
@@ -494,6 +518,9 @@ body {
   width: 100%;
   height: 100vh;
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: space-between;
 }
 
 //responsividade
