@@ -492,24 +492,24 @@ body {
 
 .items-labels {
   color: $light-pink;
-  direction: center;
   margin-top: 15px;
+  font-size: 20px;
 }
 
 .order-card {
-  @include box-sizes(19em, 17em);
+  @include box-sizes(19em, 29em);
   @include box-style();
   display: flex;
-  padding: 25px;
+  padding: 30px;
   margin: 8px;
- 
-  
+
 }
+
 
 .cards-info {
   margin: 20px;
   font-weight: bold;
-  justify-items: center;
+  text-transform: capitalize;
 
 }
 
