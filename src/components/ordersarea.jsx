@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 import OrderCard from "./ordercard";
-import OrderProducts from "./orderproducts";
+import useKitchen from "../pages/kitchen/useKitchen";
 import { updateOrderStatus } from "../services/auth";
 import { useEffect } from "react/cjs/react.development";
 
-const OrdersArea = ({ value }) => {
+const OrdersArea = () => {
+  const { orders, setOrders } = useKitchen();
   const [orderStatus, setOrderStatus] = useState([]);
-  let orders = value;
 
   const changeStatus = (elem) => {
     updateOrderStatus('/orders/', elem.id, 'finalizado')
       .then(() => setOrderStatus([...orderStatus, { id: elem.id, status: 'finalizado' }]))
   }
 
+  const ordersFiltered = () => {
+    return orders.filter((item) => item.status === 'pending')
+  }
+
   useEffect(() => {
     return orderStatus.map((order) => {
       const foundOrder = orders.map((elem) => elem).findIndex((item) => item.id === order.id)
       if (foundOrder !== -1) {
-        console.log('remover') 
+        console.log('remover')
         const removed = orders
         removed.splice(foundOrder, 1)
-        orders = removed;
+        setOrders([...removed])
         console.log(orders)
-        return orders
       }
       return orders
     })
@@ -30,8 +33,9 @@ const OrdersArea = ({ value }) => {
 
   return (
     <div className='orders-page'>
-      {orders.map((elem) => {
+      {ordersFiltered().map((elem) => {
         const clientProducts = elem.Products;
+        const product = clientProducts.map((product) => product)
         return (
           <div className='order-card' key={elem.id}>
             <OrderCard
@@ -40,32 +44,14 @@ const OrdersArea = ({ value }) => {
               status={elem.status}
               createdAt={elem.createdAt}
               onClick={() => changeStatus(elem)}
+              nameButton={'Finalizar pedido'}
+              products={product}
             />
-            {
-              clientProducts.map((product) => {
-                return (
-                  <OrderProducts
-                    key={product.id}
-                    name={product.name}
-                    flavor={product.flavor}
-                    complement={product.complement}
-                  />
-                )
-              })}
           </div>
         )
-
       }
-
       )}
     </div>
   )
 }
 export default OrdersArea;
-
-// data.map((elem) => {
-//   const products = elem.Products
-//   products.map((item) => {
-//     console.log(item)
-//   })
-// }))
