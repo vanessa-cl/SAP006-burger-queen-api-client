@@ -1,7 +1,11 @@
+import './notfound.scss'
+
 const NotFound = () => {
   return (
     <div>
-      <h1 className='test'>Not Found</h1>
+      <h1>4</h1>
+      <h1>0</h1>
+      <h1>4</h1>
     </div>
   );
 }
