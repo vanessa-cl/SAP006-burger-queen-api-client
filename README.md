@@ -48,7 +48,7 @@ Abaixo temos exemplos das telas home, login, cadastro e menu.
 <p align="center">  <img src="imgprototipo4.png" heigh="125" width="500" alt="prototipo"> </p>
 
 
-### Paleta de cores :pink_circle: :black_circle: :blue_circle: :brown_circle:
+### Paleta de cores :purple_circle: :black_circle: :large_blue_circle: :brown_circle: :white_circle:
 
  Para o layout, pensamos em uma paleta de cores que remete à temática do restaurante que homenageia o filme Fight Club. Tivemos a preocupação de buscar misturas equilibradas, com o uso dos tons mais escuros, como as cores principais, permitindo explorar diferentes texturas e combinações.
 
