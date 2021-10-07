@@ -1,0 +1,48 @@
+body {
+    margin:0;
+    font-family:sans-serif;
+    color:#f25252;
+    background:#f7f7f7;
+  }
+  h1 {
+    font-size:11rem;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    margin:0;
+  }
+  h1:nth-of-type(1){
+    animation: range 4s infinite;
+  }
+  h1:nth-of-type(2){
+    left:50%;
+    top:50%;
+    animation: size 4s infinite;
+  }
+  h1:nth-of-type(3){
+    animation: range2 4s infinite;
+  }
+  @keyframes range {
+    0%  {left:42%;top:50%;font-size:11rem;}
+    25% {left:50%;top:40%;font-size:4.5rem;}
+    50% {left:58%;top:50%;font-size:11rem;}
+    75% {left:50%;top:60%;font-size:4.5rem;}
+    100%{left:42%;top:50%;font-size:11rem;}
+  }
+  @keyframes range2 {
+    0%  {left:58%;top:50%;font-size:11rem;}
+    25% {left:50%;top:60%;font-size:4.5rem;}
+    50% {left:42%;top:50%;font-size:11rem;}
+    75% {left:50%;top:40%;font-size:4.5rem;}
+    100%{left:58%;top:50%;font-size:11rem;}
+  }
+  @keyframes size {
+    0%  {font-size:11rem;}
+    25% {font-size:26rem;}
+    50% {font-size:11rem;}
+    75% {font-size:26rem;}
+    100%{font-size:11rem;}
+  }
+  
+  
+  
+  
