@@ -90,85 +90,85 @@ Melhoramos também o design da aplicação, padronizando as fontes e cores do fe
 ## 5. Conteúdos abordados :trophy:
 
 **React**
-*jsx
+* jsx
 
-*components
+* components
 
-*events
+* events
 
-*lists-and-keys
+* lists-and-keys
 
-*conditional-rendering
+* conditional-rendering
 
-*lifting-up-state
+* lifting-up-state
 
-*hooks
+* hooks
 
-*css-modules
+* css-modules
 
-*routing
+* routing
 
 **HTML**
-*Uso de HTML semântico
+* Uso de HTML semântico
 
 **CSS**
-*Utilização do Sass
+* Utilização do Sass
 
-*Uso de seletores de CSS
+* Uso de seletores de CSS
 
-*Empregar o modelo de caixa (box model): borda, margem, preenchimento
+* Empregar o modelo de caixa (box model): borda, margem, preenchimento
 
-*Uso de flexbox en CSS
+* Uso de flexbox en CSS
 
-*Uso de CSS Grid Layout
+* Uso de CSS Grid Layout
 
-*Uso de media queries
+* Uso de media queries
 
 **JavaScript**
-*Uso ES modules
+* Uso ES modules
 
-*Uso de linter (ESLINT)
+* Uso de linter (ESLINT)
 
-*Uso de identificadores descritivos (Nomenclatura | Semântica)
+* Uso de identificadores descritivos (Nomenclatura | Semântica)
 
 **Git e GitHub**
-*Git: Instalação e configuração
+* Git: Instalação e configuração
 
-*Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)
+* Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)
 
-*Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)
+* Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)
 
-*GitHub: Criação de contas e repositórios, configuração de chave SSH
+* GitHub: Criação de contas e repositórios, configuração de chave SSH
 
-*GitHub: Implantação com GitHub Pages
+* GitHub: Implantação com GitHub Pages
 
-*GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)
+* GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)
 
-*GitHub: Organização pelo Github (projects | issues | labels | milestones | releases)
+* GitHub: Organização pelo Github (projects | issues | labels | milestones | releases)
 
 **HTTP**
-*Solicitações o requisições (request) e respostas (response).
+* Solicitações o requisições (request) e respostas (response).
 
-*Cabeçalhos (headers)
+* Cabeçalhos (headers)
 
-*Corpo (body)
+* Corpo (body)
 
-*Verbos HTTP
+* Verbos HTTP
 
-*Codigos de status de HTTP
+* Codigos de status de HTTP
 
-*Encodings e JSON
+* Encodings e JSON
 
-*CORS (Cross-Origin Resource Sharing)
+* CORS (Cross-Origin Resource Sharing)
 
 **UX (User eXperience)**
-*Desenhar a aplicação pensando e entendendo o usuário
+* Desenhar a aplicação pensando e entendendo o usuário
 
-*Criar protótipos para obter feedback e iterar
+* Criar protótipos para obter feedback e iterar
 
-*Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)
+* Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)
 
-*Planejar e executar testes de usabilidade
+* Planejar e executar testes de usabilidade
 
 ## 6. Autoras :woman_technologist:
 ### Giuliana :woman_artist:
