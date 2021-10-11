@@ -1,24 +1,24 @@
-body {
+.notfound {
     margin:0;
     font-family:sans-serif;
     color:#f25252;
     background:#f7f7f7;
   }
-  h1 {
+  .number {
     font-size:11rem;
     position:absolute;
     transform:translate(-50%,-50%);
     margin:0;
   }
-  h1:nth-of-type(1){
+  .number:nth-of-type(1){
     animation: range 4s infinite;
   }
-  h1:nth-of-type(2){
+  .number:nth-of-type(2){
     left:50%;
     top:50%;
     animation: size 4s infinite;
   }
-  h1:nth-of-type(3){
+  .number:nth-of-type(3){
     animation: range2 4s infinite;
   }
   @keyframes range {

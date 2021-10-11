@@ -33,7 +33,7 @@ const Orders = () => {
   }, [orderStatus, orders, setOrders])
 
   // useEffect(() => {
-    // return getData();
+  // return getData();
   // })
 
   return (
@@ -55,6 +55,7 @@ const Orders = () => {
                 table={elem.table}
                 status={elem.status}
                 createdAt={elem.createdAt}
+                updatedAt={elem.updatedAt}
                 onClick={() => changeStatus(elem)}
                 nameButton={'Servir pedido'}
                 products={product}

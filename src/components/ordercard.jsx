@@ -1,10 +1,8 @@
 import React from "react";
 import OrderProducts from "./orderproducts";
-const convertToMinutes = (date) => {
-  console.log(date)
-}
+import { TimeOrInterval } from "./time/time";
 
-const OrderCard = ({ src, id, name, table, status, createdAt, onClick, products, nameButton }) => {
+const OrderCard = ({ src, id, name, table, status, createdAt, updatedAt, onClick, products, nameButton }) => {
   return (
     <div className='order-card'>
       <div className='order-header'>
@@ -12,8 +10,7 @@ const OrderCard = ({ src, id, name, table, status, createdAt, onClick, products,
         <p className='order-label'>Pedido N°{id}</p>
       </div>
       <div className='cards-info'>
-        <label className='items-labels'>Chegada:</label>
-        <p className='order-info'>{convertToMinutes(createdAt)}</p>
+        <TimeOrInterval createdAt={createdAt} updatedAt={updatedAt}/>
         <label className='items-labels'>Nome:</label>
         <p className='order-info'>{name}</p>
         <label className='items-labels'>Mesa:</label>
