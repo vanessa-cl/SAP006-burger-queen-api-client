@@ -1,70 +1,182 @@
-# Getting Started with Create React App
+<p align="center">  <img src="fcb.png" heigh="125" width="500" alt="logo"> </p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## :round_pushpin: Índice
 
-## Available Scripts
+* [1. Sobre o projeto](#1-sobre-o-projeto)
+* [2. Histórias de usuários](#2-histórias-de-usuários)
+* [3. Layout](#3-layout)
+* [4. Experiência dos usuários](#4-experiência-dos-usuários)
+* [5. Conteúdos abordados](#5-conteúdos-abordados)
+* [6. Autoras](#7-autoras)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 1. Sobre o projeto  :computer:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ Esta é uma aplicação que permite à qualquer funcionário do restaurante Fight Club Burguer criar uma conta de acesso com suas respectivas credenciais (atendente ou chef de cozinha) e logar-se com ela.
+ Através da mesma, realizar pedidos utilizando um tablet, e enviá-los para a cozinha para que sejam preparados de forma ordenada e eficiente.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+O projeto foi realizado no  _bootcamp_ da [LABORATÓRIA](https://www.laboratoria.la/br).
+Acesse aqui a [aplicação](https://fight-club-burger.netlify.app/) :computer_mouse:
 
-### `npm test`
+## 2. Histórias de usuários :receipt:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Uma história do usuário é uma explicação informal e geral sobre um recurso de software escrita a partir da perspectiva do usuário final. Seu objetivo é articular como um recurso de software pode gerar valor para o cliente.
 
-### `npm run build`
+**Primeira História de Usuário**
+>Eu, como garçom/garçonete quero entrar no sistema de pedidos. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Segunda História de Usuário**
+> Eu como garçom/garçonete quero poder anotar o pedido de um cliente para não depender da minha memória, saber quanto cobrar e poder enviar os pedidos para a cozinha para serem preparados em ordem.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Terceira História de Usuário**
+>Eu como chefe de cozinha quero ver os pedidos dos clientes em ordem, poder marcar que estão prontos e poder notificar os garçons/garçonetes que o pedido está pronto para ser entregue ao cliente. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Quarta História de Usuário**
+>Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá-los rapidamente aos clientes.
 
-### `npm run eject`
+## 3. Layout :art:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Protótipo de baixa fidelidade :floppy_disk:
+O protótipo foi criado a partir das histórias do usuário, pensando na experiencia  do mesmo com o produto.
+Os esboços foram feitos já traçando a responsividade da tela, e projetados primeiramente para Mobile. 
+Abaixo temos exemplos das telas home, login, cadastro e menu. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="center">  <img src="img/prototipo1.png" heigh="125" width="500" alt="prototipo"> </p>
+<p align="center">  <img src="img/prototipo2.png" heigh="125" width="500" alt="prototipo"> </p>
+<p align="center">  <img src="img/prototipo2.png" heigh="125" width="500" alt="prototipo"> </p>
+<p align="center">  <img src="imgprototipo4.png" heigh="125" width="500" alt="prototipo"> </p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Paleta de cores :purple_circle: :black_circle: :large_blue_circle: :brown_circle: :white_circle:
 
-## Learn More
+ Para o layout, pensamos em uma paleta de cores que remete à temática do restaurante que homenageia o filme Fight Club. Tivemos a preocupação de buscar misturas equilibradas, com o uso dos tons mais escuros, como as cores principais, permitindo explorar diferentes texturas e combinações.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="center">  <img src="img/paleta.jpg" heigh="125" width="500" alt="paleta de cores"> </p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Demonstração da Aplicação :file_folder:
 
-### Code Splitting
+Por meio de gifs vamos demonstrar a usabilidade do nosso produto em formato Tablet:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Demonstração pagina de cadastro**
 
-### Analyzing the Bundle Size
+inserir gif
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+**Demonstração pagina de login**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+inserir gif
 
-### Advanced Configuration
+**Demonstração pagina de menu**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+inserir gif
 
-### Deployment
+**Demonstração pagina da cozinha**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+inserir gif
 
-### `npm run build` fails to minify
+**Demonstração pagina de pedidos finalizados**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+inserir gif
+
+## 4. Experiência dos usuários :right_anger_bubble:
+
+#### Testes de usabilidade
+
+A cada entrega de história de usuário fizemos testes de usabilidade. A partir desses testes verificamos a necessidade de fazer alterações na pagina de menu: nas cores e tamanho das fontes e ajustes nas mensagens de erro ao cadastrar.
+Melhoramos também o design da aplicação, padronizando as fontes e cores do feed, proporcionando assim uma experência visual mais agradável para os usuários.
+
+
+## 5. Conteúdos abordados :trophy:
+
+**React**
+* jsx
+
+* components
+
+* events
+
+* lists-and-keys
+
+* conditional-rendering
+
+* lifting-up-state
+
+* hooks
+
+* css-modules
+
+* routing
+
+**HTML**
+* Uso de HTML semântico
+
+**CSS**
+* Utilização do Sass
+
+* Uso de seletores de CSS
+
+* Empregar o modelo de caixa (box model): borda, margem, preenchimento
+
+* Uso de flexbox en CSS
+
+* Uso de CSS Grid Layout
+
+* Uso de media queries
+
+**JavaScript**
+* Uso ES modules
+
+* Uso de linter (ESLINT)
+
+* Uso de identificadores descritivos (Nomenclatura | Semântica)
+
+**Git e GitHub**
+* Git: Instalação e configuração
+
+* Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)
+
+* Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)
+
+* GitHub: Criação de contas e repositórios, configuração de chave SSH
+
+* GitHub: Implantação com GitHub Pages
+
+* GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)
+
+* GitHub: Organização pelo Github (projects | issues | labels | milestones | releases)
+
+**HTTP**
+* Solicitações o requisições (request) e respostas (response).
+
+* Cabeçalhos (headers)
+
+* Corpo (body)
+
+* Verbos HTTP
+
+* Codigos de status de HTTP
+
+* Encodings e JSON
+
+* CORS (Cross-Origin Resource Sharing)
+
+**UX (User eXperience)**
+* Desenhar a aplicação pensando e entendendo o usuário
+
+* Criar protótipos para obter feedback e iterar
+
+* Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)
+
+* Planejar e executar testes de usabilidade
+
+## 6. Autoras :woman_technologist:
+### Giuliana :woman_artist:
+[@Giuthamie](https://github.com/Giuthamie)  [Linkedin](https://www.linkedin.com/in/giuliana-thami%C3%AA/)
+
+### Vanessa :woman_artist:
+[@vanessa-cl](https://github.com/vanessa-cl)  [Linkedin](https://www.linkedin.com/in/vanessa-lima20-/)
+
+---
+
+Acesse aqui a [Fight Club Burger](https://fight-club-burger.netlify.app/) :computer_mouse:
