@@ -1,5 +1,7 @@
 import { useHistory } from 'react-router';
 import React, { useState } from 'react';
+import hamburger from '../img/hamburger.png';
+import hamburgerfull from '../img/hamburger-full.png';
 
 const MenuHamburger = () => {
   const [openNavBar, setOpenNavBar] = useState(false);
@@ -7,14 +9,26 @@ const MenuHamburger = () => {
 
   return (
     <nav className='menu-nav' onClick={() => {
-        openNavBar === false ?
-          setOpenNavBar(true)
-          : setOpenNavBar(false);
-      }}>
-      <div className='bar'>
-        <hr className='bar-icon'></hr>
-      </div>
+      openNavBar === false ?
+        setOpenNavBar(true)
+        : setOpenNavBar(false);
+    }}>
+      <img className='menu-icon' src={openNavBar === true ? hamburgerfull : hamburger} alt='menu-hamburguer'></img>
       <div className='nav-links'>
+        <button className={
+          `nav-item ${openNavBar === true ? ' show-item' : ''}`}
+          onClick={() => {
+            history.push('/menu');
+          }}
+        >Menu
+        </button>
+        <button className={
+          `nav-item ${openNavBar === true ? ' show-item' : ''}`}
+          onClick={() => {
+            history.push('/kitchen');
+          }}
+        >Cozinha
+        </button>
         <button className={
           `nav-item ${openNavBar === true ? ' show-item' : ''}`}
           onClick={() => {
@@ -28,7 +42,7 @@ const MenuHamburger = () => {
             localStorage.removeItem('token');
             history.push('/');
           }}
-          >Logout
+        >Logout
         </button>
       </div>
     </nav>

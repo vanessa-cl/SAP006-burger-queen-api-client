@@ -3,7 +3,7 @@ import ProductInfo from "./productinfo";
 
 export default function Cart({ data, onClick, onClickDelete }) {
   return (
-    <article className='orders-list'>
+    <article className='cart-list'>
       {data.map((elem) => {
         return (
           <div key={elem.id}>
@@ -12,11 +12,12 @@ export default function Cart({ data, onClick, onClickDelete }) {
               price={elem.price}
               flavor={elem.flavor}
               complement={elem.complement}
+              hidePlus={'hide'}
+              qtd={elem.qtd}
               onClick={() => onClick(elem)}
               onClickDelete={() => onClickDelete(elem)}
+              classItem={'product-cart'}
             />
-            <p className='quantity'>{elem.qtd}</p>
-
           </div>)
       })}
     </article>

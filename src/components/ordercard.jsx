@@ -4,32 +4,38 @@ const convertToMinutes = (date) => {
   console.log(date)
 }
 
-const OrderCard = ({ name, table, status, createdAt, onClick, products, nameButton }) => {
+const OrderCard = ({ src, id, name, table, status, createdAt, onClick, products, nameButton }) => {
   return (
-    <div>
+    <div className='order-card'>
+      <div className='order-header'>
+        <img className='order-icon' src={src} alt={'order icon'}></img>
+        <p className='order-label'>Pedido N°{id}</p>
+      </div>
       <div className='cards-info'>
-        <label className='items-labels'>Horário de chegada:</label>
-        <p>{convertToMinutes(createdAt)}</p>
+        <label className='items-labels'>Chegada:</label>
+        <p className='order-info'>{convertToMinutes(createdAt)}</p>
         <label className='items-labels'>Nome:</label>
-        <p>{name}</p>
+        <p className='order-info'>{name}</p>
         <label className='items-labels'>Mesa:</label>
-        <p>{table}</p>
+        <p className='order-info'>{table}</p>
         <label className='items-labels'>Status:</label>
-        <p>{status}</p>
+        <p className='order-info'>{status}</p>
         <label className='items-labels'>Itens:</label>
       </div>
-      {products.map((product) => {
-        return (
-          <OrderProducts
-            key={product.id}
-            name={product.name}
-            flavor={product.flavor}
-            complement={product.complement}
-          />
-        )
-      })
-      }
-      <button onClick={onClick}>{nameButton}</button>
+      <div className='order-products'>
+        {products.map((product) => {
+          return (
+            <OrderProducts
+              key={product.id}
+              name={product.name}
+              flavor={product.flavor}
+              complement={product.complement}
+            />
+          )
+        })
+        }
+      </div>
+      <button className='order-button' onClick={onClick}>{nameButton}</button>
     </div>
   )
 }

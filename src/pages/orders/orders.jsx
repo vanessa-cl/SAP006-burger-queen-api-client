@@ -2,12 +2,12 @@ import useKitchen from "../kitchen/useKitchen";
 import OrderCard from "../../components/ordercard";
 import { useState, useEffect } from "react";
 import { updateOrderStatus } from "../../services/auth";
+import MenuHamburger from "../../components/menuHamburger";
+import cutlery from '../../img/cutlery.png';;
 
 const Orders = () => {
-  const { orders, setOrders } = useKitchen();
+  const { orders, setOrders, getData } = useKitchen();
   const [orderStatus, setOrderStatus] = useState([]);
-
-  
 
   const ordersFiltered = () => {
     return orders.filter((item) => item.status === 'finalizado')
@@ -30,28 +30,39 @@ const Orders = () => {
       }
       return orders
     })
-  }, [orderStatus, orders])
+  }, [orderStatus, orders, setOrders])
+
+  // useEffect(() => {
+    // return getData();
+  // })
 
   return (
-    <div>
-      <h1 className='test'>Pedidos prontos</h1>
-      {ordersFiltered().map((elem) => {
-        const clientProducts = elem.Products;
-        const product = clientProducts.map((product) => product)
-        return (
-          <div className='order-card' key={elem.id}>
-            <OrderCard
-              name={elem.client_name}
-              table={elem.table}
-              status={elem.status}
-              createdAt={elem.createdAt}
-              onClick={() => changeStatus(elem)}
-              nameButton={'Servir pedido'}
-              products={product}
-            />
-          </div>
-        )
-      })}
+    <div className='main'>
+      <nav className='nav-page'>
+        <h1 className='page-labels'>Pedidos Finalizados</h1>
+        <MenuHamburger />
+      </nav>
+      <div className='orders-list'>
+        {ordersFiltered().map((elem) => {
+          const clientProducts = elem.Products;
+          const product = clientProducts.map((product) => product)
+          return (
+            <div key={elem.id}>
+              <OrderCard
+                src={cutlery}
+                id={elem.id}
+                name={elem.client_name}
+                table={elem.table}
+                status={elem.status}
+                createdAt={elem.createdAt}
+                onClick={() => changeStatus(elem)}
+                nameButton={'Servir pedido'}
+                products={product}
+              />
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
