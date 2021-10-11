@@ -90,6 +90,8 @@ const useProducts = () => {
   const selectComplement = (e) => setComplement(e.target.value);
 
   const handleButtonTypeClick = (e) => setProductsType(e.target.value);
+  
+
 
   const productsFiltered = () => {
     if (productsType === 'hamburguer') {
@@ -98,6 +100,7 @@ const useProducts = () => {
       return products.filter((elem) => elem.sub_type.includes(productsType));
     }
   }
+
 
   const handleOrderChange = (e) => {
     setMessage('');
@@ -139,6 +142,7 @@ const useProducts = () => {
     complement,
     productsType,
     message,
+   
   }
 }
 
