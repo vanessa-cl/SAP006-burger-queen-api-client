@@ -147,7 +147,6 @@ const useProducts = () => {
           setMessage(() => 'Preencha os campos com as informações do cliente');
         } else {
           setMessage(() => 'Pedido enviado para a cozinha com sucesso');
-          setOrderInfo({ client: '', table: '' })
           setAddItem([]);
         }
       });

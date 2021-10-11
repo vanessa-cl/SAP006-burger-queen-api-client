@@ -1,8 +1,8 @@
 import { useHistory } from 'react-router-dom';
 import norton from '../../img/norton.png';
 import fcb from '../../img/fcb.png';
-import tyler from '../../img/tyler.png'
-import tyton from '../../img/tyton.png'
+import tyler from '../../img/tyler.png';
+import tyton from '../../img/tyton.png';
 
 const Home = () => {
   const history = useHistory();
