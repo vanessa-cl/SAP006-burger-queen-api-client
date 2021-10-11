@@ -7,8 +7,6 @@ const Orders = () => {
   const { orders, setOrders } = useKitchen();
   const [orderStatus, setOrderStatus] = useState([]);
 
-  
-
   const ordersFiltered = () => {
     return orders.filter((item) => item.status === 'finalizado')
   }
@@ -30,7 +28,7 @@ const Orders = () => {
       }
       return orders
     })
-  }, [orderStatus, orders])
+  }, [orderStatus, orders, setOrders])
 
   return (
     <div>

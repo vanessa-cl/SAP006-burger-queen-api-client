@@ -13,9 +13,9 @@ const useProducts = () => {
   const initialQtd = 1;
 
   const getData = async () => {
-    const data = await getProducts('/products').then(data => data)
-    setProducts(data)
-  }
+    const data = await getProducts('/products').then(data => data);
+    setProducts(data);
+  };
 
   useEffect(() => {
     return getData();
@@ -26,19 +26,34 @@ const useProducts = () => {
     const foundItem = addItem.findIndex((item) => item.name === elem.name && item.flavor === flavor && item.complement === complement);
     if (productsType === 'hamburguer') {
       if (flavor === '') {
-        setMessage(() => 'Selecione um sabor primeiro');
+        setMessage((productsType === 'hamburguer' ? 'Selecione um sabor primeiro' : null));
       } else if (flavor !== '' && foundItem !== -1) {
-        console.log('adicionando pela segunda vez')
         addItem[foundItem].qtd++
         setAddItem([...addItem]);
       } else {
         if (complement !== '') {
-          console.log('adicionando pela primeira vez COM complemento')
           const newProduct = filterFlavor().filter((item) => item.name === elem.name && item.complement === complement);
-          setAddItem([...addItem, { id: newProduct[0].id, qtd: initialQtd, name: elem.name, price: newProduct[0].price, flavor: flavor, complement: complement }])
+          setAddItem(
+            [...addItem,
+            {
+              id: newProduct[0].id,
+              qtd: initialQtd,
+              name: elem.name,
+              price: newProduct[0].price,
+              flavor: flavor,
+              complement: complement
+            }])
         } else {
-          console.log('adicionando pela primeira vez SEM complemento')
-          setAddItem([...addItem, { id: elem.id, qtd: initialQtd, name: elem.name, price: elem.price, flavor: flavor, complement: complement }])
+          setAddItem(
+            [...addItem,
+            {
+              id: elem.id,
+              qtd: initialQtd,
+              name: elem.name,
+              price: elem.price,
+              flavor: flavor,
+              complement: complement
+            }]);
         }
       }
       setComplement('');
@@ -47,15 +62,22 @@ const useProducts = () => {
     if (productsType !== 'hamburguer') {
       setMessage('');
       if (foundItem !== -1) {
-        console.log('adicionando pela segunda vez')
         addItem[foundItem].qtd++
         setAddItem([...addItem]);
       } else {
-        console.log('adicionando pela primeira vez SEM complemento')
-        setAddItem([...addItem, { id: elem.id, qtd: initialQtd, name: elem.name, price: elem.price, flavor: flavor, complement: complement }])
+        setAddItem(
+          [...addItem,
+          {
+            id: elem.id,
+            qtd: initialQtd,
+            name: elem.name,
+            price: elem.price,
+            flavor: flavor,
+            complement: complement
+          }]);
       }
     }
-  }
+  };
 
   const deleteProducts = (elem) => {
     const foundItem = addItem.findIndex((item) => item.id === elem.id);
@@ -71,17 +93,25 @@ const useProducts = () => {
         setAddItem([...newArray])
       }
     } else {
-      setAddItem([...addItem, { id: elem.id, qtd: initialQtd, name: elem.name, price: elem.price, flavor: elem.flavor }])
+      setAddItem(
+        [...addItem,
+        {
+          id: elem.id,
+          qtd: initialQtd, 
+          name: elem.name, 
+          price: elem.price, 
+          flavor: elem.flavor
+        }]);
     }
-  }
+  };
 
   useEffect(() => {
     const sum = (previousValue, currentValue) => previousValue + currentValue;
     setTotal(() => {
       const price = addItem.map((elem) => elem.qtd * elem.price);
-      return price.reduce(sum, 0)
+      return price.reduce(sum, 0);
     })
-  }, [addItem])
+  }, [addItem]);
 
   const filterFlavor = () => products.filter((elem) => elem.flavor !== null && elem.flavor === flavor);
 
@@ -93,11 +123,11 @@ const useProducts = () => {
 
   const productsFiltered = () => {
     if (productsType === 'hamburguer') {
-      return products.filter((elem) => elem.id === 33 || elem.id === 42)
+      return products.filter((elem) => elem.id === 33 || elem.id === 42);
     } else {
       return products.filter((elem) => elem.sub_type.includes(productsType));
     }
-  }
+  };
 
   const handleOrderChange = (e) => {
     setMessage('');
@@ -106,7 +136,7 @@ const useProducts = () => {
       auxValues[e.target.name] = e.target.value;
       return auxValues;
     });
-  }
+  };
 
   const sendToKitchen = () => {
     sendOrder('/orders', orderInfo, addItem)
@@ -121,7 +151,7 @@ const useProducts = () => {
           setAddItem([]);
         }
       });
-  }
+  };
 
   return {
     handleButtonTypeClick,
@@ -139,7 +169,7 @@ const useProducts = () => {
     complement,
     productsType,
     message,
-  }
+  };
 }
 
 export default useProducts;
