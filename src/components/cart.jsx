@@ -12,11 +12,12 @@ export default function Cart({ data, onClick, onClickDelete }) {
               price={elem.price}
               flavor={elem.flavor}
               complement={elem.complement}
+              hidePlus={'hide'}
+              qtd={elem.qtd}
               onClick={() => onClick(elem)}
               onClickDelete={() => onClickDelete(elem)}
+              classItem={'product-cart'}
             />
-            <p className='quantity'>{elem.qtd}</p>
-
           </div>)
       })}
     </article>
