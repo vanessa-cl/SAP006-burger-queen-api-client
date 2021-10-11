@@ -2,10 +2,10 @@ import './notfound.scss'
 
 const NotFound = () => {
   return (
-    <div>
-      <h1>4</h1>
-      <h1>0</h1>
-      <h1>4</h1>
+    <div className='notfound'>
+      <h1 className='number'>4</h1>
+      <h1 className='number'>0</h1>
+      <h1 className='number'>4</h1>
     </div>
   );
 }
