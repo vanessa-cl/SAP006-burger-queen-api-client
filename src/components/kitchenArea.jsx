@@ -3,10 +3,15 @@ import OrderCard from "./ordercard";
 import useKitchen from "../pages/kitchen/useKitchen";
 import { updateOrderStatus } from "../services/auth";
 import { useEffect } from "react/cjs/react.development";
+import fryingpan from "../img/frying-pan.png";
 
-const OrdersArea = () => {
-  const { orders, setOrders } = useKitchen();
+const KitchenArea = () => {
+  const { orders, setOrders, getData } = useKitchen();
   const [orderStatus, setOrderStatus] = useState([]);
+
+  useEffect(() => {
+    return { orders }
+  }, [orders])
 
   const changeStatus = (elem) => {
     updateOrderStatus('/orders/', elem.id, 'finalizado')
@@ -29,16 +34,22 @@ const OrdersArea = () => {
       }
       return orders
     })
-  }, [orderStatus, orders])
+  }, [orderStatus, orders, setOrders])
+
+  // useEffect(() => {
+    // return getData();
+  // })
 
   return (
-    <div className='orders-page'>
+    <div className='orders-list'>
       {ordersFiltered().map((elem) => {
         const clientProducts = elem.Products;
         const product = clientProducts.map((product) => product)
         return (
-          <div className='order-card' key={elem.id}>
+          <div key={elem.id}>
             <OrderCard
+              src={fryingpan}
+              id={elem.id}
               name={elem.client_name}
               table={elem.table}
               status={elem.status}
@@ -54,4 +65,4 @@ const OrdersArea = () => {
     </div>
   )
 }
-export default OrdersArea;
+export default KitchenArea;

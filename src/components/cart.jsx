@@ -3,7 +3,7 @@ import ProductInfo from "./productinfo";
 
 export default function Cart({ data, onClick, onClickDelete }) {
   return (
-    <article className='orders-list'>
+    <article className='cart-list'>
       {data.map((elem) => {
         return (
           <div key={elem.id}>

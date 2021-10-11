@@ -9,13 +9,12 @@ const useKitchen = () => {
       .then((data) => setOrders(data))
   }
 
-  useEffect(() => {
-    return getData();
-  }, [])
+  useEffect(() => getData(), []);
 
   return {
     orders,
-    setOrders
+    setOrders,
+    getData,
   }
 }
 

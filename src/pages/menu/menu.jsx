@@ -82,10 +82,9 @@ const Menu = () => {
               </section>
             ) : null
             }
-
           </section>
           <section className='orders-card'>
-            <section className='order-info'>
+            <section className='cart-info'>
               <label className='menu-labels'>Cliente</label>
               <input className='menu-input' type='text' placeholder='Nome' name='client' autoComplete='off' onChange={handleOrderChange} />
               <label className='menu-labels'>Mesa</label>
@@ -103,7 +102,7 @@ const Menu = () => {
                 <option value='10'>Mesa 10</option>
               </select>
             </section>
-            <div className='orders-area'>
+            <div className='cart-area'>
               <Cart data={addItem} onClick={addProducts} onClickDelete={deleteProducts} />
               <ResultPrice value={total} />
             </div>
