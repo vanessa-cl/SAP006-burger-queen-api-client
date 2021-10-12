@@ -32,9 +32,9 @@ const Orders = () => {
     })
   }, [orderStatus, orders, setOrders])
 
-  // useEffect(() => {
-  // return getData();
-  // })
+  useEffect(() => {
+  return getData();
+  })
 
   return (
     <div className='main'>

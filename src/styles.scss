@@ -102,6 +102,7 @@ body {
   font-size: 3em;
   font-weight: bolder;
   color: $grey;
+  font-family: 'Pixels';
   
   &:hover {
     color: $pink;
@@ -518,9 +519,14 @@ body {
   font-size: 20px;
 }
 
-.order-info {
+.order-info, .order-item {
   color: $white;
-  padding: 10px;
+  padding: 10px; 
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 30px auto auto;
 }
 
 .order-icon {
@@ -534,7 +540,7 @@ body {
   border: 2px solid $light-pink;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 48px 274px auto 35px;
+  grid-template-rows: 48px auto auto 35px;
   padding: 15px;
   margin: 8px;
 
@@ -546,7 +552,7 @@ body {
 .cards-info {
   font-weight: bold;
   text-transform: capitalize;
-  padding: 10px;
+  padding: 5px;
 }
 
 .order-header {
@@ -576,12 +582,6 @@ body {
   padding: 10px;
   display: flex;
   flex-direction: column;
-}
-
-.order-item {
-  display: flex;
-  flex-direction: row;
-  padding: 5px;
 }
 
 .order-button {
@@ -651,18 +651,18 @@ body {
     margin: 8px;
   }
 
-  .order-info {
+  .cart-info {
     width: 22em;
     height: 12em;
     margin-top: 20px;
   }
 
-  .orders-area {
+  .cart-area {
     width: 22em;
     margin: 30px 0px;
   }
 
-  .orders-list {
+  .cart-list {
     width: 21em;
   }
 
