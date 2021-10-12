@@ -1,8 +1,8 @@
 import { useHistory } from 'react-router-dom';
-import norton from '../../img/norton.png';
+import jack from '../../img/jack.png';
 import fcb from '../../img/fcb.png';
 import tyler from '../../img/tyler.png';
-import tyton from '../../img/tyton.png';
+import duo from '../../img/duo.png';
 
 const Home = () => {
   const history = useHistory();
@@ -13,7 +13,7 @@ const Home = () => {
       </header>
       <section className='card-container'>
         <button className='cards' onClick={() => { history.push('/login') }}>
-          <img src={norton} className='card-photo' alt='norton' />
+          <img src={jack} className='card-photo' alt='jack' />
           <p className='card-name'>Menu</p>
         </button>
         <button className='cards' onClick={() => { history.push('/login') }}>
@@ -21,7 +21,7 @@ const Home = () => {
           <p className='card-name'>Cozinha</p>
         </button>
         <button className='cards' onClick={() => { history.push('/signup') }}>
-          <img src={tyton} className='card-photo' alt='tyler and norton' />
+          <img src={duo} className='card-photo' alt='tyler and jack' />
           <p className='card-name'>Cadastro</p>
         </button>
       </section>
