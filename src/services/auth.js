@@ -81,5 +81,4 @@ export const updateOrderStatus = (endpoint, id, status) => {
       status
     })
   }).then((res) => res.json())
-  .then((res) => console.log(res))
 }
