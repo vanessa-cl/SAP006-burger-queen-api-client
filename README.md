@@ -1,4 +1,4 @@
-<p align="center">  <img src="readme/fcb.png" heigh="125" width="500" alt="logo"> </p>
+<p align="center">  <img src="readme/fcb2.png" heigh="125" width="500" alt="logo"> </p>
 
 ## :round_pushpin: Índice
 
