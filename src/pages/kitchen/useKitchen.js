@@ -6,8 +6,15 @@ const useKitchen = () => {
 
   const getData = () => {
     getOrders('/orders')
-      .then((data) => setOrders(data))
+      .then((data) => sortById(data))
+      .then((newData) => setOrders(newData))
   }
+
+  const sortById = (data) => {
+    return data.sort((a, b) => {
+      return b.id - a.id
+    })
+  };
 
   useEffect(() => getData(), []);
 
