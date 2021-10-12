@@ -19,7 +19,7 @@ const useProducts = () => {
 
   useEffect(() => {
     return getData();
-  }, [])
+  }, []);
 
   const addProducts = (elem) => {
     setMessage('');
@@ -145,7 +145,6 @@ const useProducts = () => {
     sendOrder('/orders', orderInfo, addItem)
       .then((res => res.json()))
       .then((data) => {
-        console.log(data)
         if (data.code === 400) {
           setMessage(() => 'Preencha os campos com as informações do cliente');
         } else {

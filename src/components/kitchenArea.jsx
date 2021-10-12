@@ -14,31 +14,37 @@ const KitchenArea = () => {
   }, [orders])
 
   const changeStatus = (elem) => {
-    updateOrderStatus('/orders/', elem.id, 'finalizado')
-      .then(() => setOrderStatus([...orderStatus, { id: elem.id, status: 'finalizado' }]))
+    if (elem.status === 'pending') {
+      updateOrderStatus('/orders/', elem.id, 'preparando')
+        .then(() => setOrderStatus([...orderStatus, { id: elem.id, status: 'preparando' }]))
+    } else {
+      updateOrderStatus('/orders/', elem.id, 'finalizado')
+        .then(() => setOrderStatus([...orderStatus, { id: elem.id, status: 'finalizado' }]))
+    }
+
   }
 
   const ordersFiltered = () => {
-    return orders.filter((item) => item.status === 'pending')
+    return orders.filter((item) => item.status === 'pending' || item.status === 'preparando');
   }
 
   useEffect(() => {
-    return orderStatus.map((order) => {
-      const foundOrder = orders.map((elem) => elem).findIndex((item) => item.id === order.id)
-      if (foundOrder !== -1) {
-        console.log('remover')
-        const removed = orders
-        removed.splice(foundOrder, 1)
-        setOrders([...removed])
-        console.log(orders)
-      }
-      return orders
-    })
+    if (orderStatus.status === 'finalizado') {
+      return orderStatus.map((order) => {
+        const foundOrder = orders.map((elem) => elem).findIndex((item) => item.id === order.id)
+        if (foundOrder !== -1) {
+          const removed = orders
+          removed.splice(foundOrder, 1)
+          setOrders([...removed])
+        }
+        return orders
+      })
+    }
   }, [orderStatus, orders, setOrders])
 
-  // useEffect(() => {
-    // return getData();
-  // })
+  useEffect(() => {
+    return getData();
+  }, [orders])
 
   return (
     <div className='orders-list'>
@@ -48,6 +54,7 @@ const KitchenArea = () => {
         return (
           <div key={elem.id}>
             <OrderCard
+              processing={process}
               src={fryingpan}
               id={elem.id}
               name={elem.client_name}
@@ -55,7 +62,6 @@ const KitchenArea = () => {
               status={elem.status}
               createdAt={elem.createdAt}
               onClick={() => changeStatus(elem)}
-              nameButton={'Finalizar pedido'}
               products={product}
             />
           </div>

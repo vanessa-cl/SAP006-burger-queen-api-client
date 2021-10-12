@@ -1,5 +1,13 @@
 import { differenceInMinutes, format } from "date-fns";
 
+export const initialStatus = (status) => {
+  if (status === 'pending') {
+    return 'Pendente'
+  } else {
+    return 'Preparando'
+  }
+}
+
 export const getTime = (dateString) => {
   const date = new Date(dateString);
   const dateNewFormat = format(date, "dd/MM/yyyy HH:mm");
