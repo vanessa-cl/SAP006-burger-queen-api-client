@@ -1,4 +1,4 @@
-<p align="center">  <img src="fcb.png" heigh="125" width="500" alt="logo"> </p>
+<p align="center">  <img src="readme/fcb.png" heigh="125" width="500" alt="logo"> </p>
 
 ## :round_pushpin: Índice
 
@@ -42,17 +42,17 @@ O protótipo foi criado a partir das histórias do usuário, pensando na experie
 Os esboços foram feitos já traçando a responsividade da tela, e projetados primeiramente para Mobile. 
 Abaixo temos exemplos das telas home, login, cadastro e menu. 
 
-<p align="center">  <img src="img/prototipo1.png" heigh="125" width="500" alt="prototipo"> </p>
-<p align="center">  <img src="img/prototipo2.png" heigh="125" width="500" alt="prototipo"> </p>
-<p align="center">  <img src="img/prototipo2.png" heigh="125" width="500" alt="prototipo"> </p>
-<p align="center">  <img src="imgprototipo4.png" heigh="125" width="500" alt="prototipo"> </p>
+<p align="center">  <img src="readme/prototipo1.png" heigh="125" width="500" alt="prototipo"> </p>
+<p align="center">  <img src="readme/prototipo2.png" heigh="125" width="500" alt="prototipo"> </p>
+<p align="center">  <img src="readme/prototipo2.png" heigh="125" width="500" alt="prototipo"> </p>
+<p align="center">  <img src="readme/prototipo4.png" heigh="125" width="500" alt="prototipo"> </p>
 
 
 ### Paleta de cores :purple_circle: :black_circle: :large_blue_circle: :brown_circle: :white_circle:
 
  Para o layout, pensamos em uma paleta de cores que remete à temática do restaurante que homenageia o filme Fight Club. Tivemos a preocupação de buscar misturas equilibradas, com o uso dos tons mais escuros, como as cores principais, permitindo explorar diferentes texturas e combinações.
 
-<p align="center">  <img src="img/paleta.jpg" heigh="125" width="500" alt="paleta de cores"> </p>
+<p align="center">  <img src="readme/paleta.jpg" heigh="125" width="500" alt="paleta de cores"> </p>
 
 ### Demonstração da Aplicação :file_folder:
 
