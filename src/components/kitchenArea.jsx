@@ -44,7 +44,7 @@ const KitchenArea = () => {
 
   useEffect(() => {
     return getData();
-  }, [orders])
+  }, [getData, orders])
 
   return (
     <div className='orders-list'>

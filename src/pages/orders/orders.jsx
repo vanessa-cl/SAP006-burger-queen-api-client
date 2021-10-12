@@ -3,7 +3,6 @@ import OrderCard from "../../components/ordercard";
 import { useState, useEffect } from "react";
 import { updateOrderStatus } from "../../services/auth";
 import MenuHamburger from "../../components/menuHamburger";
-import cutlery from '../../img/cutlery.png';;
 
 const Orders = () => {
   const { orders, setOrders, getData } = useKitchen();
@@ -49,7 +48,6 @@ const Orders = () => {
           return (
             <div key={elem.id}>
               <OrderCard
-                src={cutlery}
                 id={elem.id}
                 name={elem.client_name}
                 table={elem.table}
