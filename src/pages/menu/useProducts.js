@@ -1,4 +1,4 @@
-import { getProducts, sendOrder } from "../../services/auth";
+import { getProducts, sendOrder } from "../../services/api";
 import { useState, useEffect } from "react";
 
 const useProducts = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
 import useFormLogin from './useFormLogin';
-import ShowErrors from '../../components/errors';
+import ShowErrors from '../../components/errors/errors';
 
 const Login = () => {
   const { handleChange, handleSubmit, errors } = useFormLogin();
@@ -24,6 +24,6 @@ const Login = () => {
       </form>
     </div>
   );
-}
+};
 
 export default Login;
