@@ -1,39 +1,26 @@
-import useKitchen from "../kitchen/useKitchen";
-import OrderCard from "../../components/ordercard";
-import { useState, useEffect } from "react";
-import { updateOrderStatus } from "../../services/auth";
-import MenuHamburger from "../../components/menuHamburger";
+import useOrders from "../orders/useOrders";
+import OrderCard from "../../components/ordercard/ordercard";
+import { useEffect } from "react";
+import MenuHamburger from "../../components/menuHamburger/menuHamburger";
 
 const Orders = () => {
-  const { orders, setOrders, getData } = useKitchen();
-  const [orderStatus, setOrderStatus] = useState([]);
+  const { orders, setOrders, orderStatus, getData, ordersFiltered, changeStatus } = useOrders();
 
-  const ordersFiltered = () => {
-    return orders.filter((item) => item.status === 'finalizado')
-  }
-
-  const changeStatus = (elem) => {
-    updateOrderStatus('/orders/', elem.id, 'servido')
-      .then(() => setOrderStatus([...orderStatus, { id: elem.id, status: 'servido' }]))
-  }
+  useEffect(() => {
+    return getData();
+  }, [getData, orders]);
 
   useEffect(() => {
     return orderStatus.map((order) => {
-      const foundOrder = orders.map((elem) => elem).findIndex((item) => item.id === order.id)
+      const foundOrder = orders.map((elem) => elem).findIndex((item) => item.id === order.id);
       if (foundOrder !== -1) {
-        console.log('remover')
-        const removed = orders
-        removed.splice(foundOrder, 1)
-        setOrders([...removed])
-        console.log(orders)
+        const removed = orders;
+        removed.splice(foundOrder, 1);
+        setOrders([...removed]);
       }
-      return orders
+      return orders;
     })
-  }, [orderStatus, orders, setOrders])
-
-  useEffect(() => {
-  return getData();
-  })
+  }, [orderStatus, orders, setOrders]);
 
   return (
     <div className='main'>

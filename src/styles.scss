@@ -31,7 +31,7 @@ $grey: #474747;
   color: $text-color;
   background: $background-color;
   font-weight: bolder;
-  box-shadow: inset 0 0 0 2px $light-pink;
+  box-shadow: inset 0 0 0 2px $grey;
   border: none;
   border-radius: 0.5em;
   cursor: pointer;
@@ -277,7 +277,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  @include box-sizes(30em, 8em)
+  @include box-sizes(30em, 8em);
 }
 
 .list-labels {
@@ -289,7 +289,7 @@ body {
 
 .product-item {
   display: grid;
-  grid-template-columns: 210px 40px 150px;
+  grid-template-columns: auto 40px 150px;
   font-size: 1.2em;
   font-weight: bolder;
   color: $white;
@@ -317,7 +317,7 @@ body {
 }
 
 .errors {
-  @include box-sizes(13em, 3.5em);
+  @include box-sizes(auto, 3.5em);
 }
 
 .hide {
@@ -507,10 +507,11 @@ body {
 .page-labels {
   color: $light-pink;
   text-shadow: 2px 2px $black;
-  font-size: 3.5em;
-  padding: 10px;
+  font-size: 3.2em;
+  padding: 8px;
   font-weight: bolder;
   font-family: 'Pixels';
+  margin-left: 0.5em;
 }
 
 .items-labels, .order-label {
@@ -537,7 +538,7 @@ body {
   @include box-sizes(19em, auto);
   background-color: $black;
   border-radius: 5px;
-  border: 2px solid $light-pink;
+  border: 2px solid $grey;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 48px auto auto 35px;
@@ -593,6 +594,10 @@ body {
 
 .prepared-status {
   color: $pink;
+}
+
+.final-status {
+  color: $light-blue;
 }
 
 //responsividade
@@ -651,7 +656,7 @@ body {
   }
 
   .menu-button {
-    font-size: 0.9em;
+    font-size: 0.85em;
     margin: 8px;
   }
 
@@ -684,6 +689,10 @@ body {
 
   .product-cart {
     grid-template-columns: 150px auto auto 38px 45px 90px;
+  }
+
+  .page-labels {
+    font-size: 2.1em;
   }
 }
 

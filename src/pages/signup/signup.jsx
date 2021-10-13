@@ -1,5 +1,5 @@
 import React from 'react';
-import ShowErrors from '../../components/errors';
+import ShowErrors from '../../components/errors/errors';
 import useForm from './useForm';
 
 const SignUp = () => {

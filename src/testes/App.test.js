@@ -1,7 +1,7 @@
-import MenuHamburger from '../components/menuHamburger';
-import ShowErrors from '../components/errors';
-import ProductInfo from '../components/productinfo';
-import Cart from '../components/cart';
+import MenuHamburger from '../components/menuHamburger/menuHamburger.jsx';
+import ShowErrors from '../components/errors/errors.jsx';
+import ProductInfo from '../components/productInfo/productinfo.jsx';
+import Cart from '../components/cart/cart.jsx';
 import { render, screen } from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 
@@ -25,17 +25,6 @@ describe('Menu Hamburger Component', () => {
     })
   })
 
-  it('deve retirar a classe show-item', async () => {
-    render(<MenuHamburger />);
-    const menuHamburgerTrigger = screen.getByRole('navigation');
-    const menuHamburgerItem = await screen.findAllByRole('button');
-    userEvent.click(menuHamburgerTrigger);
-
-    menuHamburgerItem.map((button) => {
-      userEvent.click(button);
-      return expect(button).toHaveClass('nav-item');
-    })
-  })
 })
 
 const mockErrorMessage = 'error message test'
@@ -50,11 +39,20 @@ describe('Error Messages Component', () => {
 })
 
 describe('Product Info Component', () => {
-  it('deve ter a classe product-item', () => {
-    render(<ProductInfo />);
+  it('deve receber uma classe via prop', () => {
+    const productClass = 'product-class';
+    render(<ProductInfo classItem={productClass}/>);
 
     const articleInfo = screen.getByRole('article');
-    expect(articleInfo).toHaveClass('product-item');
+    expect(articleInfo).toHaveClass(productClass);
+  })
+
+  it('deve chamar uma função de click recebida via prop', () => {
+    const onClick = jest.fn();
+    render(<ProductInfo data={mockData} onClickDelete={onClick}/>);
+
+    userEvent.click(screen.getByAltText('minus'))
+    expect(onClick).toHaveBeenCalledTimes(1);    
   })
 })
 
@@ -83,5 +81,6 @@ describe('Cart Component', () => {
     cartArticle.map((article) => {
       return expect(article).toBeVisible();
     })
-  })
+  });
 })
+

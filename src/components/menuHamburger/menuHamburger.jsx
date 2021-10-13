@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router';
 import React, { useState } from 'react';
-import hamburger from '../img/hamburger.png';
-import hamburgerfull from '../img/hamburger-full.png';
+import hamburger from '../../img/hamburger.png';
+import hamburgerfull from '../../img/hamburger-full.png';
 
 const MenuHamburger = () => {
   const [openNavBar, setOpenNavBar] = useState(false);

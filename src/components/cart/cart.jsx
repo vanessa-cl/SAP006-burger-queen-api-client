@@ -1,7 +1,11 @@
 import React from "react";
-import ProductInfo from "./productinfo";
+import ProductInfo from "../productInfo/productinfo";
 
-export default function Cart({ data, onClick, onClickDelete }) {
+const Cart = ({
+  data,
+  onClick,
+  onClickDelete
+}) => {
   return (
     <article className='cart-list'>
       {data.map((elem) => {
@@ -21,6 +25,7 @@ export default function Cart({ data, onClick, onClickDelete }) {
           </div>)
       })}
     </article>
+  );
+};
 
-  )
-}
+export default Cart;

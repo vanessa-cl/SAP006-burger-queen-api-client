@@ -1,10 +1,10 @@
 import React from "react";
-import MenuHamburger from "../../components/menuHamburger";
-import ProductInfo from "../../components/productinfo";
-import Cart from "../../components/cart";
-import ResultPrice from "../../components/resultprice";
+import MenuHamburger from "../../components/menuHamburger/menuHamburger";
+import ProductInfo from "../../components/productInfo/productinfo";
+import Cart from "../../components/cart/cart";
+import ResultPrice from "../../components/resultPrice/resultprice";
 import useProducts from "./useProducts";
-import ShowErrors from "../../components/errors";
+import ShowErrors from "../../components/errors/errors";
 
 const Menu = () => {
   const {
@@ -112,6 +112,6 @@ const Menu = () => {
       </section>
     </div>
   );
-}
+};
 
 export default Menu;

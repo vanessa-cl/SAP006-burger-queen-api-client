@@ -1,5 +1,3 @@
-
-
 import Login from '../pages/login/login';
 import { render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
@@ -10,16 +8,15 @@ describe('testando classe', () => {
     render(<Login/>);
     const loginTitle = screen.getByText('Login');
     expect(loginTitle).toHaveClass('form-title');
-   
   });
-})
+});
 
 
 it('deve renderizar um botão com o texto indicado', () => {
   const text = 'Logar'
   render(<button>{text}</button>);
-  const btn = screen.getByText(text)
-  expect(btn).toBeInTheDocument()
+  const btn = screen.getByText(text);
+  expect(btn).toBeInTheDocument();
 });
 
 
@@ -29,7 +26,7 @@ it('deve disparar uma função de click recebida via prop', () => {
   render(<button onClick={onClick}>{text}</button>);
 
   expect(onClick).toHaveBeenCalledTimes(0);
-  user.click(screen.getByText(text))
+  user.click(screen.getByText(text));
   expect(onClick).toHaveBeenCalledTimes(1);
 });
 
