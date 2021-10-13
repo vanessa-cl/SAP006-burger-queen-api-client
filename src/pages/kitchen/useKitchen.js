@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { getOrders } from "../../services/auth";
 
 const useKitchen = () => {
@@ -15,8 +15,6 @@ const useKitchen = () => {
       return b.id - a.id
     });
   };
-
-  useEffect(() => getData(), []);
 
   return {
     orders,

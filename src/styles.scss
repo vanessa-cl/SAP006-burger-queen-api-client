@@ -591,6 +591,10 @@ body {
   justify-self: center;
 }
 
+.prepared-status {
+  color: $pink;
+}
+
 //responsividade
 
 @media screen and (max-width: 420px) {

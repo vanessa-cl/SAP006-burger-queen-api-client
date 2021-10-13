@@ -1,4 +1,4 @@
-<p align="center">  <img src="readme/fcb2.png" heigh="125" width="500" alt="logo"> </p>
+<p align="center">  <img src="readme/fcb2.png" heigh="125" width="250" alt="logo"> </p>
 
 ## :round_pushpin: Índice
 
@@ -39,20 +39,20 @@ Uma história do usuário é uma explicação informal e geral sobre um recurso 
 
 ### Protótipo de baixa fidelidade :floppy_disk:
 O protótipo foi criado a partir das histórias do usuário, pensando na experiencia  do mesmo com o produto.
-Os esboços foram feitos já traçando a responsividade da tela, e projetados primeiramente para Mobile. 
+Os esboços foram feitos já traçando a responsividade da tela, e projetados primeiramente para Tablet.
 Abaixo temos exemplos das telas home, login, cadastro e menu. 
 
-<p align="center">  <img src="readme/prototipo1.png" heigh="125" width="500" alt="prototipo"> </p>
-<p align="center">  <img src="readme/prototipo2.png" heigh="125" width="500" alt="prototipo"> </p>
-<p align="center">  <img src="readme/prototipo2.png" heigh="125" width="500" alt="prototipo"> </p>
-<p align="center">  <img src="readme/prototipo4.png" heigh="125" width="500" alt="prototipo"> </p>
+<p align="center">  <img src="readme/prototipo1.png" heigh="125" width="350" alt="prototipo"> </p>
+<p align="center">  <img src="readme/prototipo2.png" heigh="125" width="350" alt="prototipo"> </p>
+<p align="center">  <img src="readme/prototipo2.png" heigh="125" width="350" alt="prototipo"> </p>
+<p align="center">  <img src="readme/prototipo4.png" heigh="125" width="350" alt="prototipo"> </p>
 
 
 ### Paleta de cores :purple_circle: :black_circle: :large_blue_circle: :brown_circle: :white_circle:
 
  Para o layout, pensamos em uma paleta de cores que remete à temática do restaurante que homenageia o filme Fight Club. Tivemos a preocupação de buscar misturas equilibradas, com o uso dos tons mais escuros, como as cores principais, permitindo explorar diferentes texturas e combinações.
 
-<p align="center">  <img src="readme/paleta.jpg" heigh="125" width="500" alt="paleta de cores"> </p>
+<p align="center">  <img src="readme/paleta.jpg" heigh="125" width="350" alt="paleta de cores"> </p>
 
 ### Demonstração da Aplicação :file_folder:
 
@@ -83,7 +83,7 @@ inserir gif
 
 #### Testes de usabilidade
 
-A cada entrega de história de usuário fizemos testes de usabilidade. A partir desses testes verificamos a necessidade de fazer alterações na pagina de menu: nas cores e tamanho das fontes e ajustes nas mensagens de erro ao cadastrar.
+A cada entrega de história de usuário fizemos testes de usabilidade. A partir desses testes verificamos a necessidade de fazer alterações nas paginas, por exemplo a tela de menu, que foi alterada as cores e tamanho das fontes e ajustes nas mensagens de erro ao cadastrar.
 Melhoramos também o design da aplicação, padronizando as fontes e cores do feed, proporcionando assim uma experência visual mais agradável para os usuários.
 
 
