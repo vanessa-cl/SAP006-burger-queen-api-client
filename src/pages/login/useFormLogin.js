@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { loginUser } from '../../services/auth';
+import { loginUser } from '../../services/api';
 import { useHistory } from 'react-router';
 
 const useFormLogin = () => {

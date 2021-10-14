@@ -1,5 +1,3 @@
-
-
 import SignUp from '../pages/signup/signup';
 import { render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
@@ -10,7 +8,6 @@ describe('testando classe', () => {
     render(<SignUp/>);
     const signupTitle = screen.getByText('Seu nome');
     expect(signupTitle).toHaveClass('form-labels');
-   
   });
 })
 

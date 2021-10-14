@@ -1,4 +1,4 @@
-import './notfound.scss'
+import './notfound.scss';
 
 const NotFound = () => {
   return (
@@ -8,6 +8,6 @@ const NotFound = () => {
       <h1 className='number'>4</h1>
     </div>
   );
-}
+};
 
 export default NotFound;

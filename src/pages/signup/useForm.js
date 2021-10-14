@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { validateForm } from '../../services/validate';
-import { createUser } from '../../services/auth';
+import { createUser } from '../../services/api';
 
 const useForm = () => {
   const [values, setValues] = useState({
