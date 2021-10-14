@@ -60,24 +60,24 @@ Por meio de gifs vamos demonstrar a usabilidade do nosso produto em formato Tabl
 
 **Demonstração pagina de cadastro**
 
-inserir gif
+<p align="center">  <img src="readme/cadastro.gif" alt="tela de cadastro"> </p>
 
 
 **Demonstração pagina de login**
 
-inserir gif
+<p align="center">  <img src="readme/login.gif" alt="tela de login"> </p>
 
 **Demonstração pagina de menu**
 
-inserir gif
+<p align="center">  <img src="readme/menu.gif" alt="tela de menu"> </p>
 
 **Demonstração pagina da cozinha**
 
-inserir gif
+<p align="center">  <img src="readme/cozinha.gif" alt="tela da cozinha"> </p>
 
 **Demonstração pagina de pedidos finalizados**
 
-inserir gif
+<p align="center">  <img src="readme/finalizado.gif" alt="tela de pedidos prontos para servir"> </p>
 
 ## 4. Experiência dos usuários :right_anger_bubble:
 
