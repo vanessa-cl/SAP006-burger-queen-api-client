@@ -40,6 +40,7 @@ const MenuHamburger = () => {
           `nav-item ${openNavBar === true ? ' show-item' : ''}`}
           onClick={() => {
             localStorage.removeItem('token');
+            localStorage.removeItem('role');
             history.push('/');
           }}
         >Logout

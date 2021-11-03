@@ -1,5 +1,6 @@
 import { getProducts, sendOrder } from "../../services/api";
 import { useState, useEffect } from "react";
+import { getRoleFromStorage } from "../../Utils/LocalStorage/LocalStorage";
 
 const useProducts = () => {
   const [products, setProducts] = useState([]);
@@ -97,9 +98,9 @@ const useProducts = () => {
         [...addItem,
         {
           id: elem.id,
-          qtd: initialQtd, 
-          name: elem.name, 
-          price: elem.price, 
+          qtd: initialQtd,
+          name: elem.name,
+          price: elem.price,
           flavor: elem.flavor
         }]);
     }
@@ -139,16 +140,20 @@ const useProducts = () => {
   };
 
   const sendToKitchen = () => {
-    sendOrder('/orders', orderInfo, addItem)
-      .then((res => res.json()))
-      .then((data) => {
-        if (data.code === 400) {
-          setMessage(() => 'Preencha os campos com as informações do cliente');
-        } else {
-          setMessage(() => 'Pedido enviado para a cozinha com sucesso');
-          setAddItem([]);
-        }
-      });
+    if (getRoleFromStorage() === 'attendant') {
+      sendOrder('/orders', orderInfo, addItem)
+        .then((res => res.json()))
+        .then((data) => {
+          if (data.code === 400) {
+            setMessage(() => 'Preencha os campos com as informações do cliente');
+          } else {
+            setMessage(() => 'Pedido enviado para a cozinha com sucesso');
+            setAddItem([]);
+          }
+        });
+    } else {
+      setMessage('Apenas um atendente pode enviar um pedido para a cozinha');
+    }
   };
 
   return {
