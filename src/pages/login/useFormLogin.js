@@ -21,8 +21,9 @@ const useFormLogin = () => {
   };
 
   const history = useHistory();
-  const saveToken = (token) => {
+  const saveTokenAndRole = (token, role) => {
     localStorage.setItem('token', token);
+    localStorage.setItem('role', role);
   };
 
   const handleSubmit = (e) => {
@@ -31,10 +32,10 @@ const useFormLogin = () => {
       .then(res => res.json())
       .then((data) => {
         if (data.role === 'attendant') {
-          saveToken(data.token);
+          saveTokenAndRole(data.token, data.role);
           history.push('/menu');
         } else if (data.role === 'chef') {
-          saveToken(data.token);
+          saveTokenAndRole(data.token, data.role);
           history.push('/kitchen');
         } else if (data.code === 400) {
           setErrors(data.message);

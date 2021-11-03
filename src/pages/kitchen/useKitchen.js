@@ -1,6 +1,7 @@
 import { useState } from "react";
 import GetOrdersData from "../../services/ordersData";
 import { updateOrderStatus } from "../../services/api";
+import { getRoleFromStorage } from "../../Utils/LocalStorage/LocalStorage";
 
 const useKitchen = () => {
   const { orders, setOrders, getData } = GetOrdersData();
@@ -11,22 +12,26 @@ const useKitchen = () => {
   };
 
   const changeStatus = (elem) => {
-    if (elem.status === 'pending') {
-      updateOrderStatus('/orders/', elem.id, 'preparando')
-        .then(() => setOrderStatus(
-          [...orderStatus,
-          {
-            id: elem.id,
-            status: 'preparando'
-          }]));
-    } else if (elem.status === 'preparando') {
-      updateOrderStatus('/orders/', elem.id, 'finalizado')
-        .then(() => setOrderStatus(
-          [...orderStatus,
-          {
-            id: elem.id,
-            status: 'finalizado'
-          }]));
+    if (getRoleFromStorage() === 'chef') {
+      if (elem.status === 'pending') {
+        updateOrderStatus('/orders/', elem.id, 'preparando')
+          .then(() => setOrderStatus(
+            [...orderStatus,
+            {
+              id: elem.id,
+              status: 'preparando'
+            }]));
+      } else if (elem.status === 'preparando') {
+        updateOrderStatus('/orders/', elem.id, 'finalizado')
+          .then(() => setOrderStatus(
+            [...orderStatus,
+            {
+              id: elem.id,
+              status: 'finalizado'
+            }]));
+      }
+    } else {
+      console.log('Apenas um(a) chef pode iniciar/finalizar um pedido')
     }
   };
 
