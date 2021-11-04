@@ -6,10 +6,13 @@ import fryingpan from "../../img/frying-pan.png";
 
 const Kitchen = () => {
   const { orders, setOrders, orderStatus, getData, ordersFiltered, changeStatus } = useKitchen();
-  
+
   useEffect(() => {
-    return getData();
-  }, [getData, orders]);
+    const interval = setInterval(() => {
+      return getData();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [])
 
   useEffect(() => {
     if (orderStatus.status === 'finalizado') {
@@ -23,7 +26,7 @@ const Kitchen = () => {
         return orders;
       })
     }
-  }, [orderStatus, orders, setOrders]);
+  }, [orderStatus]);
 
   return (
     <div className='main'>
