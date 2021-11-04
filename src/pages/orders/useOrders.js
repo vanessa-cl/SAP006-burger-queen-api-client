@@ -1,12 +1,24 @@
 import { useState } from "react";
-import GetOrdersData from "../../services/ordersData";
+import { getOrders } from "../../services/api";
 import { updateOrderStatus } from "../../services/api";
 import { getRoleFromStorage } from "../../Utils/LocalStorage/LocalStorage";
 
 const useOrders = () => {
-  const { orders, setOrders, getData } = GetOrdersData();
+  const [orders, setOrders] = useState([]);
   const [orderStatus, setOrderStatus] = useState([]);
 
+  const getData = () => {
+    getOrders('/orders')
+      .then((data) => sortById(data))
+      .then((newData) => setOrders(newData));
+  };
+
+  const sortById = (data) => {
+    return data.sort((a, b) => {
+      return b.id - a.id
+    });
+  };
+  
   const ordersFiltered = () => {
     return orders.filter((item) => item.status === 'finalizado');
   };

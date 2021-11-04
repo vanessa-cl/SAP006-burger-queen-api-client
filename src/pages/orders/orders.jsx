@@ -7,8 +7,11 @@ const Orders = () => {
   const { orders, setOrders, orderStatus, getData, ordersFiltered, changeStatus } = useOrders();
 
   useEffect(() => {
-    return getData();
-  }, [getData, orders]);
+    const interval = setInterval(() => {
+      return getData();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [])
 
   useEffect(() => {
     return orderStatus.map((order) => {
