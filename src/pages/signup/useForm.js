@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { validateForm } from '../../services/validate';
-import { createUser } from '../../services/api';
+import { createUser, loginUser } from '../../services/api';
+import { useHistory } from 'react-router';
+import { saveTokenAndRole } from '../../Utils/LocalStorage/LocalStorage';
 
 const useForm = () => {
   const [values, setValues] = useState({
@@ -26,6 +28,8 @@ const useForm = () => {
     });
   };
 
+  const history = useHistory();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(() => validateForm(values).message)
@@ -33,10 +37,16 @@ const useForm = () => {
       createUser('/users', values)
         .then(res => res.json())
         .then(data => {
-          if (data.code === 403) {
-            setErrors(() => data.message);
+          if (data.role === 'attendant') {
+            saveTokenAndRole(data.token, data.role);
+            loginUser('/auth', data);
+            history.push('/menu');
+          } else if (data.role === 'chef') {
+            saveTokenAndRole(data.token, data.role);
+            loginUser('/auth', data);
+            history.push('/kitchen');
           } else {
-            setErrors(() => 'Email cadastrado com sucesso!')
+            setErrors(() => data.message);
           }
         })
         .catch(error => console.log(error))

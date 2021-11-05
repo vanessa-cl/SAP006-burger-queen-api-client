@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { loginUser } from '../../services/api';
 import { useHistory } from 'react-router';
+import { saveTokenAndRole } from '../../Utils/LocalStorage/LocalStorage';
 
 const useFormLogin = () => {
   const [values, setValues] = useState({
@@ -12,7 +13,7 @@ const useFormLogin = () => {
 
   useEffect(() => {
     return errors;
-  });
+  }, [errors]);
 
   const handleChange = (e) => {
     const auxValues = { ...values };
@@ -21,10 +22,6 @@ const useFormLogin = () => {
   };
 
   const history = useHistory();
-  const saveTokenAndRole = (token, role) => {
-    localStorage.setItem('token', token);
-    localStorage.setItem('role', role);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
