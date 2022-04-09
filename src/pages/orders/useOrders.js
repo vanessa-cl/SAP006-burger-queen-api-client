@@ -6,6 +6,8 @@ import { getRoleFromStorage } from "../../Utils/LocalStorage/LocalStorage";
 const useOrders = () => {
   const [orders, setOrders] = useState([]);
   const [orderStatus, setOrderStatus] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
 
   const getData = () => {
     getOrders('/orders')
@@ -28,7 +30,8 @@ const useOrders = () => {
       updateOrderStatus('/orders/', elem.id, 'servido')
       .then(() => setOrderStatus([...orderStatus, { id: elem.id, status: 'servido' }]));
     } else {
-      console.log('Apenas um atendente pode servir os pedidos')
+      setModalMessage('Apenas um(a) atendente pode servir os pedidos')
+      setOpenModal(true)
     }
     
   };
@@ -40,6 +43,9 @@ const useOrders = () => {
     getData,
     ordersFiltered,
     changeStatus,
+    modalMessage,
+    openModal,
+    setOpenModal
   };
 };
 

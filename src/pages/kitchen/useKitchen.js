@@ -6,6 +6,8 @@ import { getRoleFromStorage } from "../../Utils/LocalStorage/LocalStorage";
 const useKitchen = () => {
   const [orders, setOrders] = useState([])
   const [orderStatus, setOrderStatus] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
 
   const getData = () => {
     getOrders('/orders')
@@ -43,7 +45,8 @@ const useKitchen = () => {
             }]));
       }
     } else {
-      console.log('Apenas um(a) chef pode iniciar/finalizar um pedido')
+      setModalMessage('Apenas um(a) chef pode alterar o status de um pedido')
+      setOpenModal(true)
     }
   };
 
@@ -54,6 +57,9 @@ const useKitchen = () => {
     getData,
     ordersFiltered,
     changeStatus,
+    modalMessage,
+    openModal,
+    setOpenModal
   };
 };
 

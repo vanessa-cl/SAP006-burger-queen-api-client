@@ -600,6 +600,41 @@ body {
   color: $light-blue;
 }
 
+//modal
+
+.modal {
+  @include box-sizes(100%, 100%);
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  display: flex;
+  background-color: $white;
+  margin: 25% auto;
+  padding: 20px;
+  border: 5px solid $light-pink;
+  width: 50%;
+  color: $black;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.close-button {
+  border: none;
+  font-size: 2rem;
+
+  &:hover{
+    color: $light-pink;
+    background-color: $white;
+  }
+}
+
 //responsividade
 
 @media screen and (max-width: 420px) {

@@ -2,9 +2,10 @@ import useOrders from "../orders/useOrders";
 import OrderCard from "../../components/ordercard/ordercard";
 import { useEffect } from "react";
 import MenuHamburger from "../../components/menuHamburger/menuHamburger";
+import Modal from "../../components/modal/modal";
 
 const Orders = () => {
-  const { orders, setOrders, orderStatus, getData, ordersFiltered, changeStatus } = useOrders();
+  const { orders, setOrders, orderStatus, getData, ordersFiltered, changeStatus, modalMessage, openModal, setOpenModal } = useOrders();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,33 +27,37 @@ const Orders = () => {
   }, [orderStatus, orders, setOrders]);
 
   return (
-    <div className='main'>
-      <nav className='nav-page'>
-        <h1 className='page-labels'>Pedidos Finalizados</h1>
-        <MenuHamburger />
-      </nav>
-      <div className='orders-list'>
-        {ordersFiltered().map((elem) => {
-          const clientProducts = elem.Products;
-          const product = clientProducts.map((product) => product)
-          return (
-            <div key={elem.id}>
-              <OrderCard
-                id={elem.id}
-                name={elem.client_name}
-                table={elem.table}
-                status={elem.status}
-                createdAt={elem.createdAt}
-                updatedAt={elem.updatedAt}
-                onClick={() => changeStatus(elem)}
-                nameButton={'Servir pedido'}
-                products={product}
-              />
-            </div>
-          )
-        })}
+    <>
+      <Modal modalMessage={modalMessage} openModal={openModal} setOpenModal={setOpenModal} />
+      <div className='main'>
+        <nav className='nav-page'>
+          <h1 className='page-labels'>Pedidos Finalizados</h1>
+          <MenuHamburger />
+        </nav>
+        <div className='orders-list'>
+          {ordersFiltered().map((elem) => {
+            const clientProducts = elem.Products;
+            const product = clientProducts.map((product) => product)
+            return (
+              <div key={elem.id}>
+                <OrderCard
+                  id={elem.id}
+                  name={elem.client_name}
+                  table={elem.table}
+                  status={elem.status}
+                  createdAt={elem.createdAt}
+                  updatedAt={elem.updatedAt}
+                  onClick={() => changeStatus(elem)}
+                  nameButton={'Servir pedido'}
+                  products={product}
+                />
+              </div>
+            )
+          })}
+        </div>
       </div>
-    </div>
+    </>
+
   )
 }
 

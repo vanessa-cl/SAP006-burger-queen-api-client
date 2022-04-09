@@ -11,6 +11,8 @@ const useProducts = () => {
   const [complement, setComplement] = useState('');
   const [message, setMessage] = useState('');
   const [orderInfo, setOrderInfo] = useState({ client: '', table: '' });
+  const [openModal, setOpenModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
   const initialQtd = 1;
 
   const getData = async () => {
@@ -155,7 +157,8 @@ const useProducts = () => {
           }
         });
     } else {
-      setMessage('Apenas um atendente pode enviar um pedido para a cozinha');
+      setModalMessage('Apenas um atendente pode enviar um pedido para a cozinha');
+      setOpenModal(true);
     }
   };
 
@@ -175,6 +178,9 @@ const useProducts = () => {
     complement,
     productsType,
     message,
+    modalMessage,
+    openModal,
+    setOpenModal
   };
 }
 
